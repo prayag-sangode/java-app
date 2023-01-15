@@ -4,7 +4,7 @@ pipeline {
          stage ("Build Artifact")
             {
             steps {
-                sh("mvn clean package -DskipTests=true")
+                sh("mvn clean install")
              }
         }
          stage ("Docker Login, Build & Push")
