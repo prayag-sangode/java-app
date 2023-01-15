@@ -4,16 +4,10 @@ pipeline {
        stage ("getting the WIF config file into a variable")
         {
             steps {
-                     withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'gcp-auth')]) 
-                        {
-                         sh '''
-                            gcloud version
-                            gsutil ls
-                            gcloud container clusters list
-                            gcloud compute instances list
-                            '''
-
-                        }
+             withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
+                sh("gcloud auth activate-service-account --key-file=${GC_KEY}")
+                sh("gsutil ls")
+  }
                 }
         }
     }    
