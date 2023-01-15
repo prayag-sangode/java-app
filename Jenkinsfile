@@ -1,14 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage ("Authenticating to GCP and execute gcloud")
+       stage("Generating OIDC token and saving it to a file") {
+            steps {
+                script {
+                        sh (script: 'gcloud auth print-identity-token anup-repo@searce-playground-v1.iam.gserviceaccount.com  --audiences="//iam.googleapis.com/projects/264743567458/locations/global/workloadIdentityPools/jenkins-wif-pool1/providers/jenkins"  > /usr/share/token/key',returnStdout: true)
+                }
+            }
+        }
+        stage ("getting the WIF config file into a variable")
         {
             steps {
-                    script
+                     withCredentials([file(credentialsId: 'wif-config-file', variable: 'WIF')]) 
                         {
                          sh '''
-                         export 
-                            gcloud auth login --brief --cred-file=/usr/share/token/clientLibraryConfig-provider --quiet --project=mypoc-374706
+                            gcloud auth login --brief --cred-file=$WIF --quiet
                             gcloud container clusters list
                             gcloud compute instances list
                             '''
