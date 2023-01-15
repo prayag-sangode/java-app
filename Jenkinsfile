@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-         stage ("Docker Login")
+         stage ("Docker Login, Build & Push")
             {
             steps {
              withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
