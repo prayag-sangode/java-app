@@ -4,7 +4,7 @@ pipeline {
          stage ("Build Artifact")
             {
             steps {
-                sh("mvn clean install")
+                sh("./mvnw package")
              }
         }
          stage ("Docker Login, Build & Push")
