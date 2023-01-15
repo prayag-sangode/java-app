@@ -12,7 +12,7 @@ pipeline {
                 }
              }
         }
-    }    
+       
     stage ("Docker Auth")
         {
             steps {
