@@ -13,4 +13,14 @@ pipeline {
              }
         }
     }    
+    stage ("Docker Auth")
+        {
+            steps {
+             withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
+                sh("gcloud auth configure-docker asia-east1-docker.pkg.dev")
+                sh("sudo docker info")
+                }
+             }
+        }
+    }    
 }
