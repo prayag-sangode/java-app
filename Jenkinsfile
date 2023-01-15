@@ -11,7 +11,7 @@ pipeline {
              }
         }
        
-    stage ("Docker Auth")
+       stage ("Docker Login | Docker Build | Docker Push")
         {
             steps {
              withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
