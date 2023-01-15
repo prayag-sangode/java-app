@@ -15,8 +15,9 @@ pipeline {
         {
             steps {
              withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
-                sh("gcloud auth configure-docker asia-east1-docker.pkg.dev")
-                sh("docker-credential-gcr configure-docker --registries=asia-east1-docker.pkg.dev")
+                //sh("gcloud auth configure-docker asia-east1-docker.pkg.dev")
+                //sh("docker-credential-gcr configure-docker --registries=asia-east1-docker.pkg.dev")
+                sh("gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://asia-east1-docker.pkg.dev")
                 }
              }
         }
