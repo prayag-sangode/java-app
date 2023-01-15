@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-         stage ("Build Artifact")
-            {
-            steps {
-                sh("./mvnw package")
-             }
-        }
          stage ("Docker Login, Build & Push")
             {
             steps {
