@@ -8,7 +8,7 @@ pipeline {
                 sh("gcloud auth activate-service-account --key-file=${GC_KEY}")
                 sh("gsutil ls")
                 sh("gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin asia-east1-docker.pkg.dev")
-                sh("docker info")
+                sh("sudo docker info")
                 }
              }
         }
