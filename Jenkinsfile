@@ -9,8 +9,6 @@ pipeline {
                 //sh("gsutil ls")
                 sh("git clone https://github.com/prayag-sangode/java-app.git")
                 }
-             }
-        }
        
        stage ("Docker Login | Docker Build | Docker Push")
         {
