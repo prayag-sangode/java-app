@@ -15,7 +15,6 @@ pipeline {
                         {
                          sh '''
                             gcloud auth login --brief --cred-file=$WIF --quiet
-                            gcloud container clusters list
                             gcloud compute instances list
                             '''
 
