@@ -8,10 +8,6 @@ spec:
       targetPort: 80
       protocol: TCP
       name: {{ .Values.applicationName }}
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-      name: {{ .Values.applicationName }}
   type: NodePort
   selector:
     app: {{ .Values.applicationName }}
