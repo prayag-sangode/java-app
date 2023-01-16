@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.applicationName }}
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -16,14 +16,6 @@ spec:
       containers:
         - name: {{ .Values.applicationName }}
           imagePullPolicy: Always
-          image: nginx:1.19.4
+          image: java-app:IMAGE
           ports:
             - containerPort: 80
-          volumeMounts:
-            - mountPath: /usr/share/nginx/html/index.html
-              name: nginx-conf
-              subPath: index.html
-      volumes:
-        - name: nginx-conf
-          configMap:
-            name: {{ .Values.applicationName  }}-configmap
