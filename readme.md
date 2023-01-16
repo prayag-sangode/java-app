@@ -3,8 +3,8 @@ You can build a jar file and run it from the command line (it should work just a
 
 
 ```
-git clone https://github.com/spring-projects/spring-petclinic.git
-cd spring-petclinic
+git clone https://github.com/prayag-sangode/java-app.git
+cd java-app
 ./mvnw package
 java -jar target/*.jar
 ```
