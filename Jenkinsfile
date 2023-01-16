@@ -17,7 +17,7 @@ pipeline {
              withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
                 sh("sed -i 's|asia-east1-docker.pkg.dev/mypoc-374706/apps-repo/java-app:.*|asia-east1-docker.pkg.dev/mypoc-374706/apps-repo/java-app:${env.BUILD_NUMBER}}|' deployment.yaml ")
                 sh("gcloud container clusters get-credentials gke-cluster --zone asia-east1-b --project mypoc-374706")
-                sh("helm upgrade ${APP_NAME} ./charts --install --values=./charts/values.yaml --namespace ${APP_NAME}")
+                sh("helm upgrade ${APP_NAME} ./charts --install --values=./charts/values.yaml")
                 }
              }
         }
