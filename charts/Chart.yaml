@@ -1,6 +1,6 @@
 version: 1.0.0
 appVersion: 0.0.1
-name: helloapp
-description: Helm chart for helloapp
+name: java-app
+description: Helm chart for Java-App
 source:
   - https://github.com/prayag-sangode/java-app
