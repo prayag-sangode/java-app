@@ -1,3 +1,23 @@
+# DevOps - Deploy Java Application using CI/CD Pipeline - Using Jenkins & Google Kubernetes Engine
+## Author - Prayag Sangode
+
+## Diagram
+
+<img src="https://github.com/prayag-sangode/java-app/blob/main/jenkins-java-app.png" alt="Alt text" title="DevOps - Deploy Java Application using CI/CD Pipeline">
+
+## Services -
+
+- GitHub - Host Java Spring Boot Apllication, Jeninsfile & Helm Charts
+- Jenkins - For CI/CD Pipeline
+- Artifact Registry - For Docker Images
+- GKE - Google Kubernetes Engine where Java App is deployed
+- Helm - Deploy Java App Helm charts
+
+## Create service account for authentication
+
+## Create Jenkins Github Webhook
+
+
 ## Running Application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 11 or newer):
 
