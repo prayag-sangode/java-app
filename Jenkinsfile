@@ -5,6 +5,8 @@ pipeline {
             {
             steps {
              withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
+                sh("gsutil ls") 
+                sh("gcloud compute instances list")
                 sh("gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://asia-east1-docker.pkg.dev")
                 sh("gcloud auth configure-docker asia-east1-docker.pkg.dev")
                 sh("sudo docker build -t asia-east1-docker.pkg.dev/pune-powerhouse/apps-repo/java-app:${env.BUILD_NUMBER} .")
