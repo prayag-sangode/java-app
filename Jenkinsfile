@@ -4,7 +4,8 @@ pipeline {
          stage ("Docker Login, Build & Push")
             {
             steps {
-             withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
+             //withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')]) {
+                sh("gcloud auth activate-service-account GCP-SA@pune-powerhouse.iam.gserviceaccount.com --key-file=$GC_KEY --project=pune-powerhouse") 
                 sh("gsutil ls") 
                 sh("gcloud compute instances list")
                 sh("gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://asia-east1-docker.pkg.dev")
