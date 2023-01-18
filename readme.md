@@ -3,7 +3,7 @@
 
 ## Diagram
 
-<img src="https://github.com/prayag-sangode/java-app/blob/main/jenkins-java-app.png" alt="Alt text" title="DevOps - Deploy Java Application using CI/CD Pipeline">
+<img src="https://github.com/prayag-sangode/java-app/blob/main/jenkins-helm-java-app.png" alt="Alt text" title="DevOps - Deploy Java Application using CI/CD Pipeline">
 
 ## Services -
 
