@@ -3,7 +3,8 @@ pipeline {
     stages {
          stage ("Docker Login, Build & Push")
             {
-            steps {
+            steps 
+                //{
              //withCredentials([file(credentialsId: 'gcp-auth-id', variable: 'GC_KEY')])
                 {
                 sh("gcloud auth activate-service-account GCP-SA@pune-powerhouse.iam.gserviceaccount.com --key-file=$GC_KEY --project=pune-powerhouse") 
