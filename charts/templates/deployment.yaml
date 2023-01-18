@@ -16,6 +16,6 @@ spec:
       containers:
         - name: {{ .Values.applicationName }}
           imagePullPolicy: Always
-          image: asia-east1-docker.pkg.dev/mypoc-374706/apps-repo/java-app:IMAGE
+          image: asia-east1-docker.pkg.dev/pune-powerhouse/apps-repo/java-app:IMAGE
           ports:
             - containerPort: 80
