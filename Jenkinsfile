@@ -14,7 +14,7 @@ pipeline {
                 sh("sudo docker build -t asia-east1-docker.pkg.dev/pune-powerhouse/apps-repo/java-app:${env.BUILD_NUMBER} .")
                 sh("sudo docker push asia-east1-docker.pkg.dev/pune-powerhouse/apps-repo/java-app:${env.BUILD_NUMBER}")
                 }
-             }
+ //            }
         }
         stage ("Helm App Deployment")
             {
