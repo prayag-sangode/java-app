@@ -21,6 +21,10 @@
 ## Running Application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 11 or newer):
 
+## Install java 
+```
+sudo apt update && sudo apt install default-jdk -y && sudo apt install maven -y && mvn -version && java -version
+```
 
 ```
 git clone https://github.com/prayag-sangode/java-app.git
