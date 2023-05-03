@@ -27,6 +27,7 @@ sudo apt update && sudo apt install default-jdk -y && sudo apt install maven -y 
 ```
 
 ```
+sudo apt install openjdk-17-jdk
 git clone https://github.com/prayag-sangode/java-app.git
 cd java-app
 ./mvnw package
